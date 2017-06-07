@@ -1,0 +1,43 @@
+packages table
+<div *ngIf="isEditView;else listView">
+  <div>
+    details view goes here ...with tracking history and documents
+    <button type="button" pButton label="backToList" icon="fa fa-check" (click)="toogleEditView($event)"></button>
+  </div>
+</div>
+
+<ng-template #listView>
+  <div>
+    <p>filter search</p>
+    <div *ngIf="packages">
+      <table class="table">
+        <thead>
+          <tr>
+            <td>Id</td>
+            <td>Tracking</td>
+            <td>Description</td>
+            <td>Sender</td>
+            <td>Weight</td>
+            <td>Price</td>
+            <td>Premium?</td>
+            <td>Details</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let package of packages">
+            <td> {{package.PAQUETE}}</td>
+            <td> {{package.TRACKING}}</td>
+            <td> {{package.DESCRIPCION}}</td>
+            <td> {{package.REMITENTE}}</td>
+            <td> {{package.PESO}}</td>
+            <td> {{package.PRECIO}}</td>
+            <td> {{package.SERVICIO}}</td>
+            <td> <button type="button" pButton label="gotoEditView" icon="fa fa-check" (click)="toogleEditView($event)"></button>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ng-template>

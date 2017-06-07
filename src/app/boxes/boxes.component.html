@@ -1,0 +1,14 @@
+boxes with addresses  
+<div *ngIf="isEditView;else listView">
+  <div>
+    edit view goes here ...
+    <button type="button" pButton label="backToList" icon="fa fa-check" (click)="toogleEditView($event)"></button>
+  </div>
+</div>
+
+<ng-template #listView>
+  <div>
+    List goes here filter search
+    <button type="button" pButton label="gotoEditView" icon="fa fa-check" (click)="toogleEditView($event)"></button>
+  </div>
+</ng-template>
